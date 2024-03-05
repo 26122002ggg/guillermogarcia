@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebidas Caliente</title>
+    <!-- Enlace al CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+
+h2{
+        font-family: "SimSun", sans-serif; /* Cambiar la fuente a SimSun */
+            font-size: 50px;
+       }
+       p{ font-family: "SimSun", sans-serif; /* Cambiar la fuente a SimSun */
+            font-size: 30px;}
+        .producto {
+            display: inline-block;
+            text-align: center;
+            margin: 0 10px;
+            font-family: "SimSun", sans-serif; /* Cambiar la fuente a SimSun */
+            font-size: 30px;
+        }
+        .producto img {
+            width: 300px;
+            height: 300px;
+            border: 3px solid #ccc;
+            border-radius: 50%; /* Hacer que el borde sea redondo */
+            background-color: #3b3d3b; /* Cambiar el color de fondo a verde */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: border-radius 0.3s ease; /* Agregar transición para suavizar el cambio */
+        }
+         .producto:hover img {
+            border-radius: 70%; /* Cambiar el radio del borde al pasar el mouse */
+            transform: scale(1.1); /* Escalar la imagen al 110% */
+        } 
+        
+        .producto img img {
+            width: 80%; /* Ajustar el tamaño de la imagen dentro del círculo */
+            height: 80%;
+            border-radius: 50%;
+            overflow: hidden; /* Evitar que la imagen se salga del círculo */
+        }
+        button {
+             transition-duration: 0.4s;
+             background-color: white;
+             font-size: 22px;
+             border-radius: 20%;
+             border: 2px solid #DEB887;
+        }
+
+        button:hover {
+            background-color: #FAEBD7; /* Green */
+            
+        }
+        /* Estilos del carrito */
+        #carrito {
+            display: none; /* Ocultar el carrito por defecto */
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background-color: white;
+            box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            z-index: 999;
+        }
+
+        #carrito h3 {
+            margin-top: 0;
+        }
+
+        #carrito p {
+            margin-bottom: 10px;
+        }
+
+        /* Estilo para el botón de cerrar */
+        #cerrar-carrito {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        /* Estilo para el botón de abrir */
+        #abrir-carrito {
+            cursor: pointer;
+        }
+
+        .descripcion {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        top: 0;
+        left: 0;
+    }
+
+    .producto:hover .descripcion {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Punto Cafe</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="venta2.html">Menú</a>
+                </li>
+                <li class="nav-item active" id="abrir-carrito">
+                    <a class="nav-link" href="#">Carrito</a>
+                </li>
+                <div id="carrito-contenido" class="hidden">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </nav>
+    
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center mb-4">
+                <h2>¡Bebidas Calientes!</h2>
+                <p>Calidez en cada sorbo: tu momento de confort</p>
+            </div>
+            <!-- Producto 1 -->
+            <div class="producto">
+                <img src="expresso.png" alt="Producto 1">
+                <p>Expresso</p>
+                <div class="descripcion">
+                    <h3>Descripción del Producto</h3>
+                    <p>Expresso Americano.</p>
+                    <p>Precio: $24.00</p>
+                </div>
+                <button onclick="agregarAlCarrito('Expresso')">Agregar al Carrito</button>
+            </div>
+            <!-- Producto 2 -->
+            <div class="producto">
+                <img src="americano.png" alt="Producto 2">
+                <p>Americano</p>
+                <div class="descripcion">
+                    <h3>Descripción del Producto</h3>
+                    <p>Expresso Americano.</p>
+                    <p>Precio: $24.00</p>
+                </div>
+                <button onclick="agregarAlCarrito('Americano')">Agregar al Carrito</button>
+            </div>
+            <!-- Producto 3 -->
+            <div class="producto">
+                <img src="caramel.png" alt="Producto 3">
+                <p>Caramelo</p>
+                <div class="descripcion">
+                    <h3>Descripción del Producto</h3>
+                    <p class="nombreProducto">Expresso Americano.</p>
+                    <p class="precioProducto">Precio: $24.00</p>
+                </div>
+                <button onclick="agregarAlCarrito()">Agregar al Carrito</button>
+            </div>
+            <!-- Producto 4 -->
+            <div class="producto">
+                <img src="chocolate.jpeg" alt="Producto 4">
+                <p>Chocolate</p>
+                <div class="descripcion">
+                    <h3>Descripción del Producto</h3>
+                    <p>Expresso Americano.</p>
+                    <p>Precio: $24.00</p>
+                </div>
+                <button onclick="agregarAlCarrito('Chocolate')">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carrito -->
+    <div id="carrito">
+        <span id="cerrar-carrito">&times;</span>
+        <h3>Carrito de Compras</h3>
+        <div id="lista-productos"></div>
+    </div>
+
+    <script>function mostrarDescripcion(event) {
+        // Obtener las coordenadas del mouse
+        var x = event.clientX;
+        var y = event.clientY;
+    
+        // Obtener la descripción del producto
+        var descripcion = document.querySelector('.descripcion');
+    
+        // Ajustar la posición de la descripción
+        descripcion.style.top = y + 'px';
+        descripcion.style.left = x + 'px';
+    }
+    
+    function ocultarDescripcion() {
+        // Ocultar la descripción cuando se retira el mouse
+        var descripcion = document.querySelector('.descripcion');
+        descripcion.style.opacity = 0;
+    }</script>
+
+    <!-- Enlaces a jQuery y Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="carrito.js"></script>
+    <script src="funciones.js"></script>
+
+</body>
+</html>

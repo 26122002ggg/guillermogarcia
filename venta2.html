@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto Cafe</title>
+    <!-- Enlace al CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+       h2{
+        font-family: "SimSun", sans-serif; /* Cambiar la fuente a SimSun */
+            font-size: 50px;
+       }
+       p{ font-family: "SimSun", sans-serif; /* Cambiar la fuente a SimSun */
+            font-size: 30px;}
+        .producto {
+            display: inline-block;
+            text-align: center;
+            margin: 0 10px;
+            font-family: "SimSun", sans-serif; /* Cambiar la fuente a SimSun */
+            font-size: 30px;
+        }
+        .producto img {
+            width: 300px;
+            height: 300px;
+            border: 3px solid #ccc;
+            border-radius: 50%; /* Hacer que el borde sea redondo */
+            background-color: #161616; /* Cambiar el color de fondo a verde */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: border-radius 0.3s ease; /* Agregar transición para suavizar el cambio */
+        }
+        .producto:hover img {
+            border-radius: 70%; /* Cambiar el radio del borde al pasar el mouse */
+            transform: scale(1.1); /* Escalar la imagen al 110% */
+        }
+        .producto img img {
+            width: 80%; /* Ajustar el tamaño de la imagen dentro del círculo */
+            height: 80%;
+            border-radius: 50%;
+            overflow: hidden; /* Evitar que la imagen se salga del círculo */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-12 text-center mb-4">
+            <h2>¡Disfrútalos!</h2>
+            <p>Conoce nuestras bebidas y alimentos de temporada</p>
+        </div>
+        <!-- Producto 1 -->
+        <div class="producto">
+          <a href="bebidas_calientes.html">
+            <img src="calientes.png" alt="Producto 1">
+          </a>
+          <p>Bebidas Calientes</p>
+        </div>
+        <!-- Producto 2 -->
+        <div class="producto">
+            <a href="bebidas_frias.html">
+                <img src="Frios.png" alt="Producto 2">
+            </a>
+              <p>Bebidas Frias</p>
+            
+        </div>
+        <!-- Producto 3 -->
+        <div class="producto">
+            <a href="alimentos.html">
+                <img src="alimentos.png" alt="Producto 3">
+            </a>
+              <p>Alimentos</p>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Enlaces a jQuery y Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
